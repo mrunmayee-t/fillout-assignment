@@ -1,7 +1,4 @@
-import InfoIcon from "../assets/images/info.svg";
-import DetailsIcon from "../assets/images/file.svg";
-import OtherIcon from "../assets/images/file.svg";
-import EndingIcon from "../assets/images/check.svg";
+
 
 import {Info, FileText, CircleCheck } from "lucide-react";
 

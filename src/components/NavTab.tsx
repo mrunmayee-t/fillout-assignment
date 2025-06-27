@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import React from "react";
 import type { LucideIcon } from "lucide-react";
 
@@ -54,7 +54,7 @@ const NavTab: React.FC<NavTabProps> = ({
           className="font-extrabold text-2xl text-[var(--context-menu-icon)] cursor-pointer hover:text-gray-800 ml-2"
           onClick={(e) => {
             e.stopPropagation();
-            onMenuClick && onMenuClick(e);
+            onMenuClick?.(e);
           }}
         >
           ⋮

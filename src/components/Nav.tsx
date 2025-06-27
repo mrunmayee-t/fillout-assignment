@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import NavTab from "./NavTab";
+
 
 import {
   DndContext,
@@ -9,14 +9,14 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
+  DragEndEvent,
 } from "@dnd-kit/core";
 import {
   arrayMove,
   SortableContext,
-  useSortable,
   horizontalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
+
 import SortableNavTab from "./SortableNavTab";
 import ContextMenu from "./ContextMenu";
 import { initialNavItems } from "@/constants/navItems";
@@ -33,21 +33,23 @@ const Nav: React.FC = () => {
   const [activeId, setActiveId] = useState<string>(navItems[0].id);
   const [contextMenu, setContextMenu] = useState<{ x: number; y: number; navId: string } | null>(null);
 
-  const handleDragEnd = (event: any) => {
+  const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
     if (active.id !== over?.id) {
       const oldIndex = navItems.findIndex((item) => item.id === active.id);
-      const newIndex = navItems.findIndex((item) => item.id === over.id);
+      const newIndex = navItems.findIndex((item) => item.id === over?.id);
       setNavItems(arrayMove(navItems, oldIndex, newIndex));
     }
   };
 
-  const insertPageAt = (index: number) => {};
+  const insertPageAt = (index: number) => {
+    console.log("insertPageAt--", index);
+  };
 
   // Context menu handlers (implement as needed)
   const handleContextMenuAction = (action: string) => {
     if (!contextMenu) return;
-    const navId = contextMenu.navId;
+    //const navId = contextMenu.navId;
     switch (action) {
       case "setFirstPage":
         // Implement set as first page logic
