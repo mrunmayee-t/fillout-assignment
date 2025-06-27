@@ -1,0 +1,16 @@
+:root{
+    --primary-color: #F59D0E;
+    --primary-text-color: #1A1A1A;
+    --default-color: rgba(157,164,178,0.7);
+    --default-text-color: #677289;
+    --hover-background-color: rgba(157,164,178,0.4);
+    --active-border-color: #E1E1E1;
+    --focus-border-color:#2F72E2;
+    --background-color: #F9FAFB;
+    --context-menu-icon: #9DA4B2;
+    --context-menu-delete-text: #EF494F;
+    --senary-color: #fff;
+    --septenary-color: #bdbdbd;
+    --octonary-color: #000;
+    --nonary-color: #f5a623;
+}
